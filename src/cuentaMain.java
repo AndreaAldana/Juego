@@ -6,13 +6,13 @@ public class cuentaMain {
         c1.transferencia(3000, c2);
         c2.giro(100);
 
-        System.out.println("Juanito " + c1.saldo);
-        System.out.println("Pablito "+ c2.saldo);
+        System.out.println("Juanito " + c1.getSaldo());
+        System.out.println("Pablito "+ c2.getSaldo());
 
         c1.transferencia(1000,c2);
 
-        System.out.println("Juanito " + c1.saldo);
-        System.out.println("Pablito " + c2.saldo);
+        System.out.println("Juanito " + c1.getSaldo());
+        System.out.println("Pablito " + c2.getSaldo());
 
     }
 }

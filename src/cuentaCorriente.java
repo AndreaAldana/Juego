@@ -1,8 +1,16 @@
 public class cuentaCorriente {
 
-    String nombre;
-    String rut;
-    double saldo;
+    private final String nombre;
+    private String rut;
+    private double saldo;
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
 
     cuentaCorriente(String nombre, int saldo){
         this.nombre = nombre;
@@ -30,7 +38,7 @@ public class cuentaCorriente {
         if(monto>this.saldo) return;
         this.saldo-=monto;
         destino.saldo +=monto;
-    }
 
+}
 
 }
