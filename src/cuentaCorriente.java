@@ -1,3 +1,6 @@
+import Tarea1.IllegalAmountException;
+import Tarea1.SobreGiroException;
+
 public class cuentaCorriente {
 
     private final String nombre;
@@ -20,13 +23,22 @@ public class cuentaCorriente {
     }
 
 
-    void giro(double monto){
-        if(monto>this.saldo)
-            return;
-        saldo -= monto;
+    void giro(double monto) throws SobreGiroException{
+        if(monto <= 0){
+            throw  new IllegalAmountException("Inválido");
+        }
+        if (monto > this.saldo) {
+            throw new SobreGiroException("Malo");
+        } else {
+            saldo -= monto;
+        }
+
     }
 
     void depositar(double monto){
+        if(monto <= 0){
+            throw  new IllegalAmountException("Inválido");
+        }
         this.saldo +=monto;
 
     }
@@ -35,10 +47,14 @@ public class cuentaCorriente {
     }
 
     void transferencia (int monto, cuentaCorriente destino){
+        if(monto <= 0){
+            throw  new IllegalAmountException("Inválido");
+        }
         if(monto>this.saldo) return;
         this.saldo-=monto;
         destino.saldo +=monto;
 
 }
+
 
 }

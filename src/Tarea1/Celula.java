@@ -30,8 +30,12 @@ public class Celula {
         this.ADN = ADN;
         String ADNComplementario = this.ADN;
 
-        return ADNComplementario.replace("C", "B").replace("G", "C").replace("B", "G")
-                .replace("A", "D").replace("T", "A").replace("D", "T");
+        return ADNComplementario.replace("C", "B")
+                .replace("G", "C")
+                .replace("B", "G")
+                .replace("A", "D")
+                .replace("T", "A")
+                .replace("D", "T");
     }
 
     public String cadenaARN(String ADNComplementario){
@@ -41,12 +45,22 @@ public class Celula {
     }
 
     public String mitosis(String ADN, Celula destino){
-        String mitosis = this.ADN;
-        return mitosis;
+            String mitosis = this.ADN;
+            String result;
+            StringBuilder adnBuilder = new StringBuilder(ADN);
+            String a = "ACGT";
+            double randd = Math.random();
+            if(randd < 0.1){
+                adnBuilder.setCharAt((int)(Math.random()*ADN.length()), a.charAt((int)(Math.random()*a.length())));
+                result = adnBuilder.toString();
+
+            }else{
+                return mitosis;
+            }
+            return result;
+        }
+
+
     }
-
-
-
-}
 
 

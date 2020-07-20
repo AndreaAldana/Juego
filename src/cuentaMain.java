@@ -1,5 +1,7 @@
+import Tarea1.SobreGiroException;
+
 public class cuentaMain {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SobreGiroException {
         cuentaCorriente c1 = new cuentaCorriente("Juanito", 10000);
         cuentaCorriente c2 = new cuentaCorriente ("Pablito", 50000);
 
